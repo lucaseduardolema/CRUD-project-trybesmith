@@ -14,12 +14,4 @@ export default class UserModel {
 
     return row;
   }
-
-  // async getUserByUsername(username: string): Promise<IUser> {
-  //   const [result] = await this.connection.execute<IUser & RowDataPacket[]>(
-  //     'SELECT * FROM Trybesmith.Users WHERE username = ?',
-  //     [username],
-  //   );
-  //   return result;
-  // }
 }

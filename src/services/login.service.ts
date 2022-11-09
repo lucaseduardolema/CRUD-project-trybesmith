@@ -11,10 +11,13 @@ export default class LoginService {
     const { error } = loginSchema.validate(login);
     if (error) throw new HttpError(400, error.message);
 
-    const user = await this.loginModel.getUserByLogin(login);
+    const { username, password } = login;
+    const encodedPass = btoa(password);
+
+    const user = await this.loginModel.getUserByLogin({ username, password: encodedPass });
     if (user.length === 0) throw new HttpError(401, 'Username or password invalid');
 
-    const { password, ...rest } = user[0];
+    const { password: p, ...rest } = user[0];
     
     const token = createToken(rest);
     return token;

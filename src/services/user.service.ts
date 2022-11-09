@@ -14,10 +14,13 @@ export default class UserService {
       throw new HttpError(code, error.message);
     }
 
-    const { affectedRows } = await this.userModel.insertUser(user);
+    const { password } = user;
+    const encodedPass = btoa(password);
+
+    const { affectedRows } = await this.userModel.insertUser({ ...user, password: encodedPass });
     if (affectedRows === 0) throw new HttpError(500, 'Internal Error');
 
-    const { password, ...rest } = user;    
+    const { password: p, ...rest } = user;    
     const token = createToken(rest);
     return token;
   }

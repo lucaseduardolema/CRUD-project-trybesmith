@@ -12,7 +12,7 @@ export default class LoginModel {
       WHERE username = ? AND password = ?;`,
       [login.username, login.password],
     );
-
+    
     return result;
   }
 }

@@ -26,17 +26,17 @@ CREATE TABLE Trybesmith.Products (
 INSERT INTO
   Trybesmith.Users (username, classe, level, password)
 VALUES
-  ("reigal", "Guerreiro", 10, "1dragaonoceu");
+  ("reigal", "Guerreiro", 10, "MWRyYWdhb25vY2V1");
 
 INSERT INTO
   Trybesmith.Users (username, classe, level, password)
 VALUES
-  ("vyrion", "Inventor", 8, "pagandodividas");
+  ("vyrion", "Inventor", 8, "cGFnYW5kb2RpdmlkYXM=");
 
 INSERT INTO
   Trybesmith.Users (username, classe, level, password)
 VALUES
-  ("yraa", "Ladina", 5, "valarmorg");
+  ("yraa", "Ladina", 5, "dmFsYXJtb3Jn");
 
 INSERT INTO
   Trybesmith.Orders (userId)

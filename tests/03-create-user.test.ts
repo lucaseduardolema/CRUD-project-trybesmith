@@ -35,7 +35,7 @@ describe('3 - Crie um endpoint para o cadastro de pessoas usuárias', function()
 
     expect(users).toEqual(
       expect.arrayContaining(
-        [expect.objectContaining(user)]
+        [expect.objectContaining({ ...user, password: 'c2VuaGExMjM0' })]
       )
     )
   });
